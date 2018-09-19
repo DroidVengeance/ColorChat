@@ -1,0 +1,219 @@
+options:
+    Version: 1.1
+
+    prefix: &8[&aChatColor+&8]
+    
+    Chest-Prefix: &c&l&oColorChat+
+
+    Locked: &c&oLocked
+
+    Unlocked: &a&oUnlocked
+
+command /color [<text>]:
+    description: Color text
+    aliases: /colorchat, /chat
+    permission: colorchat.open
+    trigger:
+        if arg is not set:
+            open chest with 3 row named "{@Chest-Prefix}" to player
+            if player has permission "colorchat.lightgreen" or "colorchat.*":
+                format slot 0 of player with Light Green Dye with name "&aLight Green" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat lightgreen"
+            else:
+                format slot 0 of player with Light Green Dye with name "&aLight Green" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.aqua" or "colorchat.*":
+                format slot 1 of player with Light Blue Dye with name "&bAqua" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat aqua"
+            else:
+                format slot 1 of player with Light Blue Dye with name "&bAqua" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.lightred" or "colorchat.*":
+                format slot 2 of player with Red Dye with name "&cLight Red" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat lightred"
+            else:
+                format slot 2 of player with Red Dye with name "&cLight Red" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.pink" or "colorchat.*":
+                format slot 3 of player with Pink Dye with name "&dPink" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat pink"
+            else: 
+                format slot 3 of player with Pink Dye with name "&dPink" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.yellow" or "colorchat.*":
+                format slot 4 of player with Yellow Dye with name "&eYellow" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat yellow"
+            else:
+                format slot 4 of player with Yellow Dye with name "&eYellow" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.white" or "colorchat.*":
+                format slot 5 of player with Bone Meal with name "&fWhite" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat white"
+            else:
+                format slot 5 of player with Bone Meal with name "&fWhite" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.blue" or "colorchat.*":
+                format slot 6 of player with Blue Dye with name "&1Blue" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat blue"
+            else:
+                format slot 6 of player with Blue Dye with name "&1Blue" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.green" or "colorchat.*":
+                format slot 7 of player with Green Dye with name "&2Green" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat green"
+            else:
+                format slot 7 of player with Green Dye with name "&2Green" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.darkaqua" or "colorchat.*":
+                format slot 8 of player with Cyan Dye with name "&3Dark Aqua" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat darkaqua"
+            else:
+                format slot 8 of player with Cyan Dye with name "&3Dark Aqua" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.red" or "colorchat.*":
+                format slot 9 of player with redstone with name "&4Red" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat red"
+            else:
+                format slot 9 of player with redstone with name "&4Red" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.purple" or "colorchat.*":
+                format slot 10 of player with purple dye with name "&5Purple" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat Purple"
+            else:
+                format slot 10 of player with purple dye with name "&5Purple" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.orange" or "colorchat.*":
+                format slot 11 of player with orange dye with name "&6Orange" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat orange"
+            else:
+                format slot 11 of player with orange dye with name "&6Orange" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.lightgray" or "colorchat.*":
+                format slot 12 of player with Light Gray dye with name "&7Gray" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat Lightgray"
+            else:
+                format slot 12 of player with Light Gray Dye with name "&7Gray" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.darkagray" or "colorchat.*":
+                format slot 13 of player with Gray Dye with name "&8Dark Gray" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat darkgray"
+            else:
+                format slot 13 of player with Gray Dye with name "&8Dark Gray" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.lightblue" or "colorchat.*":
+                format slot 14 of player with Cyan Dye with name "&9Light Blue" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat lightblue"
+            else:
+                format slot 14 of player with Cyan Dye with name "&9Light Blue" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.bold" or "colorchat.*":
+                format slot 18 of player with name tag with name "&7&lBOLD" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat bold"
+            else:
+                format slot 18 of player with name tag with name "&7&lBOLD" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.strike" or "colorchat.*":
+                format slot 19 of player with name tag with name "&7&mStrike" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat strike"
+            else:
+                format slot 19 of player with name tag with name "&7&mStrike" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.italic" or "colorchat.*":
+                format slot 20 of player with name tag with name "&7&oItalic" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat italic"
+            else:
+                format slot 20 of player with name tag with name "&7&oItalic" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            if player has permission "colorchat.underline" or "colorchat.*":
+                format slot 21 of player with name tag with name "&7&nUnderline" with lore "{@Unlocked}" to close then run "sudo %player% /colorchat underline"
+            else:
+                format slot 21 of player with name tag with name "&7&nUnderline" with lore "{@Locked}" to close then run "sudo %player% /nochatperms"
+            format slot 26 of player with tnt with name "&fReset" to close then run "sudo %player% /colorchat reset"
+        if arg 1 is not "reset" or "bold" or "italic" or "underline" or "strike" or "blue" or "green" or "darkaqua" or "red" or "purple" or "orange" or "lightgray" or "darkgray" or "lightblue" or "lightgreen" or "aqua" or "lightred" or "pink" or "yellow" or "white":
+            message "&5&lColorChat &8&l> &cUnknow color."
+            message "&7Color list&8: &1Blue&7, &2Green&7, &3DarkAqua&7, &4Red&7, &5Purple&7, &6Orange&7, &7LightGray, &8DarkGray&7, &9LightBlue&7, &aLightGreen&7, &bAqua&7 ,&cLightRed &7,&dPink &7,&eYellow &7,&f White"
+        if arg 1 is "blue":
+            if player has permission "colorchat.blue" or "colorchat.*":
+                set display name of player to "&1%player%"
+                message "{@prefix} &7You have selected your chat color as &1Blue&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "green":
+            if player has permission "colorchat.green" or "colorchat.*":
+                set display name of player to "&2%player%"
+                message "{@prefix} &7You have selected your chat color as &2Green&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "darkaqua":
+            if player has permission "colorchat.darkaqua" or "colorchat.*":
+                set display name of player to "&3%player%"
+                message "{@prefix} &7You have selected your chat color as &3Dark Aqua&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "red":
+            if player has permission "colorchat.red" or "colorchat.*":
+                set display name of player to "&4%player%"
+                message "{@prefix} &7You have selected your chat color as &4Red&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "purple":
+            if player has permission "colorchat.purple" or "colorchat.*":
+                set display name of player to "&5%player%"
+                message "{@prefix} &7You have selected your chat color as &5Purple&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "orange":
+            if player has permission "colorchat.orange" or "colorchat.*":
+                set display name of player to "&6%player%"
+                message "{@prefix} &7You have selected your chat color as &6Orange&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "lightgray":
+            if player has permission "colorchat.lightgray" or "colorchat.*":
+                set display name of player to "&7%player%"
+                message "{@prefix} &7You have selected your chat color as &7Light Gray&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "darkgray":
+            if player has permission "colorchat.darkgray" or "colorchat.*":
+                set display name of player to "&8%player%"
+                message "{@prefix} &7You have selected your chat color as &8Drak Gray&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "lightblue":
+            if player has permission "colorchat.lightblue" or "colorchat.*":
+                set display name of player to "&9%player%"
+                message "{@prefix} &7You have selected your chat color as &9Light Blue&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "lightgreen":
+            if player has permission "colorchat.lightgreen" or "colorchat.*":
+                set display name of player to "&a%player%"
+                message "{@prefix} &7You have selected your chat color as &aLight Green&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "aqua":
+            if player has permission "colorchat.aqua" or "colorchat.*":
+                set display name of player to "&c%player%"
+                message "{@prefix} &7You have selected your chat color as &bAqua&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "lightred":
+            if player has permission "colorchat.lightred" or "colorchat.*":
+                set display name of player to "&c%player%"
+                message "{@prefix} &7You have selected your chat color as &cLight Red&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "pink":
+            if player has permission "colorchat.pink" or "colorchat.*":
+                set display name of player to "&d%player%"
+                message "{@prefix} &7You have selected your chat color as &dPink&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "yellow":
+            if player has permission "colorchat.yellow" or "colorchat.*":
+                set display name of player to "&e%player%"
+                message "{@prefix} &7You have selected your chat color as &eYellow&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "white":
+            if player has permission "colorchat.white" or "colorchat.*":
+                set display name of player to "&f%player%"
+                message "{@prefix} &7You have selected your chat color as &fWhite&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "bold":
+            if player has permission "colorchat.bold" or "colorchat.*":
+                Set {Color.format.%player%} to "&l"
+                message "{@prefix} &7You have selected your chat color as &lBOLD&r&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "strike":
+            if player has permission "colorchat.strike" or "colorchat.*":
+                Set {Color.format.%player%} to "&m"
+                message "{@prefix} &7You have selected your chat color as &mStrike&r&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "italic":
+            if player has permission "colorchat.italic" or "colorchat.*":
+                Set {Color.format.%player%} to "&o"
+                message "{@prefix} &7You have selected your chat color as &oitalic&r&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "underline":
+            if player has permission "colorchat.underline" or "colorchat.*":
+                Set {Color.format.%player%} to "&n"
+                message "{@prefix} &7You have selected your chat color as &nunderline&r&7!"
+            else: 
+                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        if arg 1 is "reset":
+            set set display name of player to "%player%"
+            message "{@prefix} &7You have &freseted &7your color chat!"
+
+command /nochatperms:
+    trigger:
+        message "{@prefix} &cSorry, but you don't have permissions to use this!"
