@@ -92,7 +92,7 @@ command /colorchat [<text>]:
                 create a gui slot 21 of player with name tag with name "&7&nUnderline" with lore "{@Locked}" to close then run player command "nochatperms"
             create a gui slot 16 of player with tnt with name "&fReset" to close then run player command "colorchat reset"
         if arg 1 is not "reset" or "bold" or "italic" or "underline" or "strike" or "blue" or "green" or "darkaqua" or "red" or "purple" or "orange" or "lightgray" or "darkgray" or "lightblue" or "lightgreen" or "aqua" or "lightred" or "pink" or "yellow" or "white":
-            message "&5&lColorChat &8&l> &cUnknow color."
+            message "&5&lColorChat &8&l> &cUnknown color."
             message "&7Color list&8: &1Blue&7, &2Green&7, &3DarkAqua&7, &4Red&7, &5Purple&7, &6Orange&7, &7LightGray, &8DarkGray&7, &9LightBlue&7, &aLightGreen&7, &bAqua&7 ,&cLightRed &7,&dPink &7,&eYellow &7,&f White"
         if arg 1 is "blue":
             if player has permission "colorchat.blue" or "colorchat.*":
