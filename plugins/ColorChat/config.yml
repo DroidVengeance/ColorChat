@@ -14,7 +14,7 @@ Locked:
   - "&c&oLocked"
 
 # If the required permission is set, it will display "UnLocked".
-UnLocked:
+Unlocked:
   - "&a&oUnlocked"
 
 # Plugin Version - DO NOT CHANGE

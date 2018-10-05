@@ -9,7 +9,7 @@ on script load:
     set {colorchat::prefix} to skutil yaml value "Prefix" from file "plugins/ColorChat/config.yml"
     set {colorchat::chestPrefix} to skutil yaml value "Chest-Prefix" from file "plugins/ColorChat/config.yml"
     set {colorchat::locked} to skutil yaml value "Locked" from file "plugins/ColorChat/config.yml"
-    set {colorchat::unlocked} to skutil yaml value "UnLocked" from file "plugins/ColorChat/config.yml"
+    set {colorchat::unlocked} to skutil yaml value "Unlocked" from file "plugins/ColorChat/config.yml"
 
 
 options:
