@@ -1,8 +1,8 @@
-ColorChat - Allow players to change their chat color. 
+# ColorChat - Allow players to change their chat color. 
 
 
 # You can change the plugin's prefix for all messages here.
-prefix:
+Prefix:
   - "&8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]"
 
 # This is the name of the GUI to select your colors.    

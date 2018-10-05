@@ -3,7 +3,7 @@ on script load:
         create folder "plugins/ColorChat"
         send "[ColorChat] &fCreating folder..." to the console
     if file "plugins/ColorChat/config.yml" doesn't exists:
-        download from "https://bit.ly/2MXFaCN" to "plugins/ColorChat/config.yml"
+        download from "https://bit.ly/2zTKaAn" to "plugins/ColorChat/config.yml"
         send "[ColorChat] &fGenerating config.yml..." to the console
     set {colorchat::version} to skutil yaml value "Version" from file "plugins/ColorChat/config.yml"
     set {colorchat::prefix} to skutil yaml value "Prefix" from file "plugins/ColorChat/config.yml"
