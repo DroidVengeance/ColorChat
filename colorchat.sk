@@ -7,21 +7,12 @@ on script load:
         send "[ColorChat] &fGenerating config.yml..." to the console
     set {colorchat::version} to skutil yaml value "Version" from file "plugins/ColorChat/config.yml"
     set {colorchat::prefix} to skutil yaml value "Prefix" from file "plugins/ColorChat/config.yml"
-    set {colorchat::chestPrefix} to skutil yaml value "Chest-Prefix" from file "plugins/ColorChat/config.yml"
     set {colorchat::locked} to skutil yaml value "Locked" from file "plugins/ColorChat/config.yml"
     set {colorchat::unlocked} to skutil yaml value "Unlocked" from file "plugins/ColorChat/config.yml"
+    send "[ColorChat] Loaded..." to the console
+    send "[ColorChat] By: DroidVengeance" to the console
 
 
-options:
-    Version: 1.0.0
-
-    prefix: &8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]
-    
-    Chest-Prefix: &8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]
-
-    Locked: &c&oLocked
-
-    Unlocked: &a&oUnlocked
 
 command /colorchat [<text>]:
     description: Change your chat color
@@ -29,81 +20,81 @@ command /colorchat [<text>]:
     permission: colorchat.use
     trigger:
         if arg is not set:
-            open chest with 3 row named "{@Chest-Prefix}" to player
+            open chest with 3 row named "&8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]" to player
             if player has permission "colorchat.lightgreen" or "colorchat.*":
-                format a gui slot 0 of player with Light Green Dye with name "&aLight Green" with lore "{@Unlocked}" to close then run player command "colorchat lightgreen"
+                format a gui slot 0 of player with Light Green Dye with name "&aLight Green" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat lightgreen"
             else:
-                format a gui slot 0 of player with Light Green Dye with name "&aLight Green" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 0 of player with Light Green Dye with name "&aLight Green" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.aqua" or "colorchat.*":
-                format a gui slot 1 of player with Light Blue Dye with name "&bAqua" with lore "{@Unlocked}" to close then run player command "colorchat aqua"
+                format a gui slot 1 of player with Light Blue Dye with name "&bAqua" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat aqua"
             else:
-                format a gui slot 1 of player with Light Blue Dye with name "&bAqua" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 1 of player with Light Blue Dye with name "&bAqua" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.lightred" or "colorchat.*":
-                format a gui slot 2 of player with Red Dye with name "&cLight Red" with lore "{@Unlocked}" to close then run player command "colorchat lightred"
+                format a gui slot 2 of player with Red Dye with name "&cLight Red" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat lightred"
             else:
-                format a gui slot 2 of player with Red Dye with name "&cLight Red" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 2 of player with Red Dye with name "&cLight Red" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.pink" or "colorchat.*":
-                format a gui slot 3 of player with Pink Dye with name "&dPink" with lore "{@Unlocked}" to close then run player command "colorchat lightpurple"
+                format a gui slot 3 of player with Pink Dye with name "&dPink" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat lightpurple"
             else: 
-                format a gui slot 3 of player with Pink Dye with name "&dPink" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 3 of player with Pink Dye with name "&dPink" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.yellow" or "colorchat.*":
-                format a gui slot 4 of player with Yellow Dye with name "&eYellow" with lore "{@Unlocked}" to close then run player command "colorchat yellow"
+                format a gui slot 4 of player with Yellow Dye with name "&eYellow" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat yellow"
             else:
-                format a gui slot 4 of player with Yellow Dye with name "&eYellow" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 4 of player with Yellow Dye with name "&eYellow" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.white" or "colorchat.*":
-                format a gui slot 5 of player with Bone Meal with name "&fWhite" with lore "{@Unlocked}" to close then run player command "colorchat white"
+                format a gui slot 5 of player with Bone Meal with name "&fWhite" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat white"
             else:
-                format a gui slot 5 of player with Bone Meal with name "&fWhite" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 5 of player with Bone Meal with name "&fWhite" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.blue" or "colorchat.*":
-                format a gui slot 6 of player with Blue Dye with name "&1Blue" with lore "{@Unlocked}" to close then run player command "colorchat blue"
+                format a gui slot 6 of player with Blue Dye with name "&1Blue" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat blue"
             else:
-                format a gui slot 6 of player with Blue Dye with name "&1Blue" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 6 of player with Blue Dye with name "&1Blue" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.green" or "colorchat.*":
-                format a gui slot 7 of player with Green Dye with name "&2Green" with lore "{@Unlocked}" to close then run player command "colorchat green"
+                format a gui slot 7 of player with Green Dye with name "&2Green" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat green"
             else:
-                format a gui slot 7 of player with Green Dye with name "&2Green" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 7 of player with Green Dye with name "&2Green" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.darkaqua" or "colorchat.*":
-                format a gui slot 8 of player with Cyan Dye with name "&3Dark Aqua" with lore "{@Unlocked}" to close then run player command "colorchat darkaqua"
+                format a gui slot 8 of player with Cyan Dye with name "&3Dark Aqua" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat darkaqua"
             else:
-                format a gui slot 8 of player with Cyan Dye with name "&3Dark Aqua" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 8 of player with Cyan Dye with name "&3Dark Aqua" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.red" or "colorchat.*":
-                format a gui slot 10 of player with redstone with name "&4Red" with lore "{@Unlocked}" to close then run player command "colorchat red"
+                format a gui slot 10 of player with redstone with name "&4Red" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat red"
             else:
-                format a gui slot 10 of player with redstone with name "&4Red" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 10 of player with redstone with name "&4Red" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.purple" or "colorchat.*":
-                format a gui slot 11 of player with purple dye with name "&5Purple" with lore "{@Unlocked}" to close then run player command "colorchat purple"
+                format a gui slot 11 of player with purple dye with name "&5Purple" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat purple"
             else:
-                format a gui slot 11 of player with purple dye with name "&5Purple" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 11 of player with purple dye with name "&5Purple" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.orange" or "colorchat.*":
-                format a gui slot 12 of player with orange dye with name "&6Orange" with lore "{@Unlocked}" to close then run player command "colorchat orange"
+                format a gui slot 12 of player with orange dye with name "&6Orange" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat orange"
             else:
-                format a gui slot 12 of player with orange dye with name "&6Orange" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 12 of player with orange dye with name "&6Orange" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.lightgray" or "colorchat.*":
-                format a gui slot 13 of player with Light Gray dye with name "&7Gray" with lore "{@Unlocked}" to close then run player command "colorchat Lightgray"
+                format a gui slot 13 of player with Light Gray dye with name "&7Gray" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat Lightgray"
             else:
-                format a gui slot 13 of player with Light Gray Dye with name "&7Gray" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 13 of player with Light Gray Dye with name "&7Gray" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.darkagray" or "colorchat.*":
-                format a gui slot 14 of player with Gray Dye with name "&8Dark Gray" with lore "{@Unlocked}" to close then run player command "colorchat darkgray"
+                format a gui slot 14 of player with Gray Dye with name "&8Dark Gray" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat darkgray"
             else:
-                format a gui slot 14 of player with Gray Dye with name "&8Dark Gray" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 14 of player with Gray Dye with name "&8Dark Gray" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.lightblue" or "colorchat.*":
-                format a gui slot 15 of player with Light Blue Dye with name "&9Light Blue" with lore "{@Unlocked}" to close then run player command "colorchat lightblue"
+                format a gui slot 15 of player with Light Blue Dye with name "&9Light Blue" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat lightblue"
             else:
-                format a gui slot 15 of player with Light Blue Dye with name "&9Light Blue" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 15 of player with Light Blue Dye with name "&9Light Blue" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.bold" or "colorchat.*":
-                format a gui slot 18 of player with name tag with name "&7&lBOLD" with lore "{@Unlocked}" to close then run player command "colorchat bold"
+                format a gui slot 18 of player with name tag with name "&7&lBOLD" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat bold"
             else:
-                format a gui slot 18 of player with name tag with name "&7&lBOLD" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 18 of player with name tag with name "&7&lBOLD" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.strike" or "colorchat.*":
-                format a gui slot 19 of player with name tag with name "&7&mStrike" with lore "{@Unlocked}" to close then run player command "colorchat strike"
+                format a gui slot 19 of player with name tag with name "&7&mStrike" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat strike"
             else:
-                format a gui slot 19 of player with name tag with name "&7&mStrike" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 19 of player with name tag with name "&7&mStrike" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             if player has permission "colorchat.italic" or "colorchat.*":
-                format a gui slot 20 of player with name tag with name "&7&oItalic" with lore "{@Unlocked}" to close then run player command "colorchat italic"
+                format a gui slot 20 of player with name tag with name "&7&oItalic" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat italic"
             if player has permission "colorchat.underline" or "colorchat.*":
-                format a gui slot 21 of player with name tag with name "&7&nUnderline" with lore "{@Unlocked}" to close then run player command "colorchat underline"
+                format a gui slot 21 of player with name tag with name "&7&nUnderline" with lore "%{colorchat::unlocked}%" to close then run player command "colorchat underline"
             else:
-                format a gui slot 21 of player with name tag with name "&7&nUnderline" with lore "{@Locked}" to close then run player command "nochatperms"
+                format a gui slot 21 of player with name tag with name "&7&nUnderline" with lore "%{colorchat::locked}%" to close then run player command "nochatperms"
             format a gui slot 16 of player with tnt with name "&fReset" to close then run player command "colorchat reset"
 
         if arg 1 is not "reset" or "bold" or "italic" or "underline" or "strike" or "blue" or "green" or "darkaqua" or "red" or "purple" or "orange" or "lightgray" or "darkgray" or "lightblue" or "lightgreen" or "aqua" or "lightred" or "pink" or "yellow" or "white":
@@ -113,143 +104,143 @@ command /colorchat [<text>]:
             if player has permission "colorchat.blue" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&1"
-                message "{@prefix} &7You have selected your chat color as &1Blue&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &1Blue&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "green":
             if player has permission "colorchat.green" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&2"
-                message "{@prefix} &7You have selected your chat color as &2Green&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &2Green&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "darkaqua":
             if player has permission "colorchat.darkaqua" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&3"
-                message "{@prefix} &7You have selected your chat color as &3Dark Aqua&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &3Dark Aqua&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "red":
             if player has permission "colorchat.red" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&4"
-                message "{@prefix} &7You have selected your chat color as &4Red&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &4Red&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "purple":
             if player has permission "colorchat.purple" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&5"
-                message "{@prefix} &7You have selected your chat color as &5Purple&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &5Purple&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "orange":
             if player has permission "colorchat.orange" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&6"
-                message "{@prefix} &7You have selected your chat color as &6Orange&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &6Orange&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "lightgray":
             if player has permission "colorchat.lightgray" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&7"
-                message "{@prefix} &7You have selected your chat color as &7Light Gray&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &7Light Gray&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "darkgray":
             if player has permission "colorchat.darkgray" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&8"
-                message "{@prefix} &7You have selected your chat color as &8Drak Gray&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &8Drak Gray&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "lightblue":
             if player has permission "colorchat.lightblue" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&9"
-                message "{@prefix} &7You have selected your chat color as &9Light Blue&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &9Light Blue&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "lightgreen":
             if player has permission "colorchat.lightgreen" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&a"
-                message "{@prefix} &7You have selected your chat color as &aLight Green&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &aLight Green&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "aqua":
             if player has permission "colorchat.aqua" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&b"
-                message "{@prefix} &7You have selected your chat color as &bAqua&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &bAqua&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "lightred":
             if player has permission "colorchat.lightred" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&c"
-                message "{@prefix} &7You have selected your chat color as &cLight Red&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &cLight Red&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "lightpurple":
             if player has permission "colorchat.pink" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&d"
-                message "{@prefix} &7You have selected your chat color as &dPink&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &dPink&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "yellow":
             if player has permission "colorchat.yellow" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&e"
-                message "{@prefix} &7You have selected your chat color as &eYellow&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &eYellow&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "white":
             if player has permission "colorchat.white" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&f"
-                message "{@prefix} &7You have selected your chat color as &fWhite&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &fWhite&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "bold":
             if player has permission "colorchat.bold" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&l"
-                message "{@prefix} &7You have selected your chat color as &lBOLD&r&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &lBOLD&r&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "strike":
             if player has permission "colorchat.strike" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&m"
-                message "{@prefix} &7You have selected your chat color as &mStrike&r&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &mStrike&r&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "italic":
             if player has permission "colorchat.italic" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&o"
-                message "{@prefix} &7You have selected your chat color as &oitalic&r&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &oitalic&r&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "underline":
             if player has permission "colorchat.underline" or "colorchat.*":
                 play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
                 Set {Color.format.%player%} to "&n"
-                message "{@prefix} &7You have selected your chat color as &nunderline&r&7!"
+                message "%{colorchat::prefix}% &7You have selected your chat color as &nunderline&r&7!"
             else: 
-                message "{@prefix} &cSorry, but you don't have permissions to use this!"
+                message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         if arg 1 is "reset":
             play sound "BLOCK_STONE_PRESSUREPLATE_CLICK_ON" with volume 5 at player
             Set {Color.format.%player%} to "&r"
-            message "{@prefix} &7You have &freset &7your color chat!"
+            message "%{colorchat::prefix}% &7You have &freset &7your color chat!"
 
 command /nochatperms:
     trigger:
-        message "{@prefix} &cSorry, but you don't have permissions to use this!"
+        message "%{colorchat::prefix}% &cSorry, but you don't have permissions to use this!"
         
 on chat:
     set message to "%{Color.format.%player%}%%message%"

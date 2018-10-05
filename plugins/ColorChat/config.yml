@@ -5,10 +5,6 @@
 Prefix:
   - "&8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]"
 
-# This is the name of the GUI to select your colors.    
-Chest-Prefix:
-  - "&8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]"
-
 # If the required permission isn't set, it will display "Locked".
 Locked:
   - "&c&oLocked"
