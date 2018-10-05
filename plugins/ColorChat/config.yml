@@ -1,0 +1,22 @@
+ColorChat - Allow players to change their chat color. 
+
+
+# You can change the plugin's prefix for all messages here.
+prefix:
+  - "&8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]"
+
+# This is the name of the GUI to select your colors.    
+Chest-Prefix:
+  - "&8[&aC&1o&4l&bo&fr&7C&6h&2a&dt&8]"
+
+# If the required permission isn't set, it will display "Locked".
+Locked:
+  - "&c&oLocked"
+
+# If the required permission is set, it will display "UnLocked".
+Unlocked:
+  - "&a&oUnlocked"
+
+# Plugin Version - DO NOT CHANGE
+Version:
+  - 1.0.1

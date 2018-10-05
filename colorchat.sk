@@ -1,3 +1,17 @@
+on script load:
+    if folder "plugins/ColorChat" doesn't exists:
+        create folder "plugins/ColorChat"
+        send "[ColorChat] &fCreating folder..." to the console
+    if file "plugins/ColorChat/config.yml" doesn't exists:
+        download from "https://bit.ly/2MXFaCN" to "plugins/ColorChat/config.yml"
+        send "[ColorChat] &fGenerating config.yml..." to the console
+    set {colorchat::version} to skutil yaml value "Version" from file "plugins/ColorChat/config.yml"
+    set {colorchat::prefix} to skutil yaml value "Prefix" from file "plugins/ColorChat/config.yml"
+    set {colorchat::chestPrefix} to skutil yaml value "Chest-Prefix" from file "plugins/ColorChat/config.yml"
+    set {colorchat::locked} to skutil yaml value "Locked" from file "plugins/ColorChat/config.yml"
+    set {colorchat::unlocked} to skutil yaml value "UnLocked" from file "plugins/ColorChat/config.yml"
+
+
 options:
     Version: 1.0.0
 
